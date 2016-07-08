@@ -30,6 +30,15 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+#bootstrap 4
+gem 'bootstrap', '~> 4.0.0.alpha3'
+
+#to avoid the JS error when deploying to Heroku
+gem 'rails-assets-tether'
+
+#to prepare our app to deploy to Heroku
+gem 'rails_12factor'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
