@@ -1,5 +1,11 @@
-<% @food_items.in_groups_of(3) do |group| %>
-    <div class="container">
+<div class="container" style="margin-top: 10px">
+  <div class="btn-group btn-group-justified" role="group" aria-label="Basic example">
+    <% @sections.each do |section| %>
+        <%= link_to section, menu_path(section: section), class: 'btn btn-secondary' %>
+    <% end %>
+  </div>
+  <% @food_items.in_groups_of(3) do |group| %>
+
       <div class="row">
         <% group.compact.each do |food_item| %>
             <div class="col-sm-4">
@@ -15,6 +21,6 @@
             </div>
         <% end %>
       </div>
-    </div>
-<% end %>
+  <% end %>
+</div>
 

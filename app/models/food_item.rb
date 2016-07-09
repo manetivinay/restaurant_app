@@ -17,4 +17,9 @@ class FoodItem < ApplicationRecord
       "http://loremflickr.com/320/240/#{CGI.escape name}"
     end
   end
+
+  def self.by_section(section)
+    # SELECT * FROM food_items WHERE food_items.section = '#{section}'
+    where(section: section)
+  end
 end
