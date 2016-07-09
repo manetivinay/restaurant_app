@@ -1,0 +1,47 @@
+<%= form_for @food_item do |f| %>
+    <div class="col-md-12" style='border: 2px solid black'>
+      <div class="col-md-6">
+        <% if @food_item.errors.any? %>
+            <div id="error_explanation">
+              <h2>
+                <%= pluralize(@food_item.errors.count, "error") %><br>
+                Prohibited this Food Item from being saved.
+              </h2>
+              <ul>
+                <% @food_item.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+              </ul>
+            </div>
+        <% end %>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <%= f.text_field(:name, class: "form-control", placeholder: 'Please Enter the name of Food Item') %>
+        </div>
+        <div class="form-group">
+          <label for="price">Price</label>
+          <%= f.number_field(:price, type: "number", class: "form-control", placeholder: 'Please Enter the price for the Food Item') %>
+        </div>
+        <div class="form-group">
+          <label for="price">Section</label>
+          <%= f.text_field(:section, class: "form-control", placeholder: 'Please mention the section for this food item') %>
+        </div>
+        <div class="form-group">
+          <label for="price">Image Url</label>
+          <%= f.text_field(:image_url, class: "form-control", placeholder: 'Pleas provide the url of the food item picture') %>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="section">Description</label>
+          <%= f.text_area(:description, class: "form-control", rows: "8", placeholder: 'Please Enter the Description for the Food Item') %>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <%= f.submit(class: "btn btn-xl") %>
+        </div>
+      </div>
+    </div>
+
+<% end %>
