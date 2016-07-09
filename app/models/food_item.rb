@@ -1,4 +1,7 @@
 class FoodItem < ApplicationRecord
+
+  has_many :orders, dependent: :destroy
+
   validates :name,
             presence: true
 
@@ -10,6 +13,7 @@ class FoodItem < ApplicationRecord
 
   validates :section,
             presence: true
+
   def image_url_or_default
     if image_url.present?
       image_url

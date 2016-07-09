@@ -24,4 +24,5 @@ en:
   success_food_item: Food Item was succcessfully created
   delete_food_item: Food Item was succcessfully deleted
   update_food_item: Food Item was succcessfully updated
+  successfully_order: Order Submitted. Thank you!
 

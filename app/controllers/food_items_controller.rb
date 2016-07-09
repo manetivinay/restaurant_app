@@ -30,7 +30,7 @@ class FoodItemsController < ApplicationController
   def destroy
     @food_item = FoodItem.find(params[:id])
     @food_item.destroy
-    flash[:error] = I18n.t('delete_food_item');
+    flash[:danger] = I18n.t('delete_food_item');
     redirect_to food_items_path
   end
 

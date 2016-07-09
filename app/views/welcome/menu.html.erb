@@ -1,6 +1,6 @@
 <div class="container" style=" margin-top: 10px">
   <div class="btn-group" role="group" aria-label="Basic example">
-    <% @sections.each do |section| %>
+    <% Section.all.each do |section| %>
         <%= link_to section, menu_path(section: section), class: 'btn btn-secondary' %>
     <% end %>
   </div>
@@ -27,4 +27,3 @@
       </div>
   <% end %>
 </div>
-
