@@ -20,7 +20,7 @@
 
       <h3 class="card-title">Image url</h3>
 
-      <p class="card-text"><%= image_tag(@food_item.image_url) %></p>
+      <p class="card-text"><%= image_tag(@food_item.image_url_or_default) %></p>
 
       <%= link_to 'Edit', edit_food_item_path, :class => 'btn btn-secondary' %>
       <%= link_to 'Back', food_items_path, :class => 'btn btn-secondary' %>
