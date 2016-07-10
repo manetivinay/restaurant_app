@@ -1,7 +1,12 @@
 class FoodItemsController < ApplicationController
 
   def index
-    @food_items = FoodItem.all
+    # @food_items = FoodItem.all
+    if params[:search]
+      @food_items = FoodItem.search_name(params[:search])
+    else
+      @food_items = FoodItem.all
+    end
   end
 
   def show

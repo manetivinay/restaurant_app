@@ -27,14 +27,14 @@
                 <%= image_tag food_item.image_url_or_default, alt: food_item.name, class: "card-img-top center-block image-format" %>
                 <div class="card-block">
                   <h4 class="card-title">
-                    <%= link_to food_item.name, food_item %>
-                    <span class="label label-default"><%= food_item.orders.size %></span>
-                    <span class="label label-default"><%= food_item.view %></span>
+                    <%= link_to food_item.name, show_menu_path(:id => food_item.id) %>
+                    <span class="label label-default">ordered: <%= food_item.orders.size %></span>
+                    <span class="label label-default">Views: <%= food_item.view %></span>
                   </h4>
 
                   <p class="card-text"><%= food_item.description %></p>
 
-                  <span class="label label-default"><%= food_item.price %></span>
+                  <span class="label label-default">Price: <%= food_item.price %></span>
                   <%= link_to 'order', new_food_item_order_path(:food_item_id => food_item.id), class: 'btn btn-danger' %>
                 </div>
               </div>

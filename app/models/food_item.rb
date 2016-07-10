@@ -14,6 +14,7 @@ class FoodItem < ApplicationRecord
   validates :section,
             presence: true
 
+
   def image_url_or_default
     if image_url.present?
       image_url
@@ -28,13 +29,16 @@ class FoodItem < ApplicationRecord
   end
 
   def self.search(params)
+    items = all
+    # search by name
+    if params[:search].present?
+      items = where("lower(name) LIKE ?", "%#{params[:search]}%".downcase)
+    end
 
     section = ''
     if params[:section].present?
       items = where(section: params[:section])
       section = params[:section]
-    else
-      items = all
     end
 
     sort_by_alphabet = params['a']

@@ -1,0 +1,29 @@
+<h1>Welcome to Paradise Restaurant</h1>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card card-block">
+      <h3 class="card-title">Name</h3>
+
+      <p class="card-text"><%= @food_item.name %></p>
+
+      <h3 class="card-title">Description</h3>
+
+      <p class="card-text"><%= @food_item.description %></p>
+
+      <h3 class="card-title">price</h3>
+
+      <p class="card-text"><%= @food_item.price %></p>
+
+      <h3 class="card-title">Section</h3>
+
+      <p class="card-text"><%= @food_item.section %></p>
+
+      <h3 class="card-title">Image url</h3>
+
+      <p class="card-text"><%= image_tag(@food_item.image_url_or_default) %></p>
+
+    </div>
+  </div>
+
+
+</div>

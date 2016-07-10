@@ -8,4 +8,7 @@ class WelcomeController < ApplicationController
   def menu
     @food_items = FoodItem.search(params)
   end
+  def show
+    @food_item = FoodItem.find(params[:id])
+  end
 end

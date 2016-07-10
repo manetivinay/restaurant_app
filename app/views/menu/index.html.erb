@@ -8,7 +8,7 @@
   <% @food_items.in_groups_of(5) do |group| %>
       <div class="row">
         <% group.compact.each do |food_item| %>
-            <div class="col-sm-4">
+            <div class="col-sm-6">
               <div class="card" style="margin-top: 10px">
 
                 <%= image_tag food_item.image_url_or_default, alt: food_item.name, class: "card-img-top center-block image-format" %>

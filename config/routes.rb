@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   end
   get 'menu' => 'welcome#menu'
   get 'contact_us' => 'welcome#contact_us'
+  get 'show_menu' => 'welcome#show'
   root 'welcome#index'
 end
