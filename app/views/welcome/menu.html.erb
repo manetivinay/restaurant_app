@@ -1,13 +1,27 @@
+<!--To Display section food items when you click on Button Group(particular Food type)-->
 <div class="container" style=" margin-top: 10px">
   <div class="btn-group" role="group" aria-label="Basic example">
     <% Section.all.each do |section| %>
         <%= link_to section, menu_path(section: section), class: 'btn btn-secondary' %>
     <% end %>
+    <div class="dropdown pull-xs-right" style="float: right">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Sort
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <%= link_to 'Alphabetical', menu_path(:section => params[:section], :a => 'a-z'), class: 'dropdown-item' %>
+        <%= link_to 'Price High to Low', menu_path(:section => params[:section], :p => 'high-to-low'), class: 'dropdown-item' %>
+        <%= link_to 'Price Low to High', menu_path(:section => params[:section], :p => 'low-to-high'), class: 'dropdown-item' %>
+        <%= link_to 'Most Views', menu_path(:section => params[:section], :v => true), class: 'dropdown-item' %>
+      </div>
+    </div>
   </div>
-  <% @food_items.in_groups_of(3) do |group| %>
+
+
+  <% @food_items.in_groups_of(5) do |group| %>
       <div class="row">
         <% group.compact.each do |food_item| %>
-            <div class="col-sm-4">
+            <div class="col-sm-6">
               <div class="card" style="margin-top: 10px">
 
                 <%= image_tag food_item.image_url_or_default, alt: food_item.name, class: "card-img-top center-block image-format" %>
@@ -15,10 +29,12 @@
                   <h4 class="card-title">
                     <%= link_to food_item.name, food_item %>
                     <span class="label label-default"><%= food_item.orders.size %></span>
+                    <span class="label label-default"><%= food_item.view %></span>
                   </h4>
 
                   <p class="card-text"><%= food_item.description %></p>
 
+                  <span class="label label-default"><%= food_item.price %></span>
                   <%= link_to 'order', new_food_item_order_path(:food_item_id => food_item.id), class: 'btn btn-danger' %>
                 </div>
               </div>

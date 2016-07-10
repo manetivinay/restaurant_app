@@ -17,3 +17,5 @@
 //= require tether
 //= require bootstrap-sprockets
 //= require_tree .
+
+$('.dropdown-toggle').dropdown()

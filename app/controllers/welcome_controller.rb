@@ -6,10 +6,6 @@ class WelcomeController < ApplicationController
   end
 
   def menu
-    if params[:section]
-      @food_items = FoodItem.where section: params[:section]
-    else
-      @food_items = FoodItem.all
-    end
+    @food_items = FoodItem.search(params)
   end
 end
