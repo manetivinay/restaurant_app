@@ -60,7 +60,7 @@ Note: You may have to add extra fields to the MenuItem model to accomplish the b
 
 Here's a walkthrough of implemented user stories:
 
-![Video Walkthrough](blog_gif_1.gif)
+![Video Walkthrough](restaurant_app.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
